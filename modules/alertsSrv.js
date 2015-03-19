@@ -1,7 +1,7 @@
 "use strict";
 
 var _ = require("lodash");
-var Cookie = require("manage-cookies");
+var Cookie = require("cookie_mgmt");
 
 module.exports = function () {
   var cookie = new Cookie();

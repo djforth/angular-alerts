@@ -5,7 +5,7 @@ exports.externals = [
   {expose: 'lodash', path: './node_modules/lodash/index.js'},
 
   //Morse Libraries
-  {expose: 'manage-cookies', path: './node_modules/cookie_mgmt/index.js'}
+  {expose: 'cookie_mgmt', path: './node_modules/cookie_mgmt/index.js'}
 ]
 
 exports.externalsTest = [
