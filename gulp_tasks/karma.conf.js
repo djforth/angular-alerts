@@ -1,6 +1,8 @@
 // Karma configuration
 // Generated on Sun Sep 21 2014 14:40:52 GMT+0100 (BST)
 
+var vendor = require("./config/externals.js")
+
 module.exports = function(config) {
   config.set({
 
@@ -15,6 +17,8 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+        '../lib/vendors.js',
+        '../spec/lib/lib.js',
         '../spec/*.es6.js'
     ],
 
@@ -33,7 +37,19 @@ module.exports = function(config) {
     browserify: {
       debug: true,
       transform: ['babelify'],
-      extensions: [ ".es6.js"]
+      extensions: [ ".es6.js"],
+      configure: function(bundle) {
+        bundle.on('prebundle', function() {
+          vendor.externals.forEach(function(ext){
+
+            bundle.external(ext.expose)
+          })
+
+          vendor.externalsTest.forEach(function(ext){
+            bundle.external(ext.expose)
+          })
+        });
+      }
     },
 
 
