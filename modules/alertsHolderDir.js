@@ -1,7 +1,5 @@
 "use strict";
 
-"strict";
-
 module.exports = function () {
   return {
     restrict: "A",
