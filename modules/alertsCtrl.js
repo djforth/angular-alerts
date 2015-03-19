@@ -14,11 +14,11 @@ module.exports = ["$scope", "AlertsFcty", "AlertsSrv", function ($scope, AlertsF
   });
 
   $scope.showAll = function () {
-    AlertsSrv.resetHidden();
+    return AlertsSrv.resetHidden();
   };
 
   $scope.hideAll = function () {
-    AlertsSrv.hideAll($scope.alerts);
+    return AlertsSrv.hideAll($scope.alerts);
   };
 
   return this;

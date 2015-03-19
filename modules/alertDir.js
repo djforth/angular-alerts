@@ -28,11 +28,11 @@ module.exports = ["$sce", "AlertsSrv", function ($sce, AlertsSrv) {
       $scope.showMore = false;
 
       $scope.hideAlert = function () {
-        AlertsSrv.isHidden($scope.alertdata);
+        return AlertsSrv.isHidden($scope.alertdata);
       };
 
       $scope.closeAlert = function () {
-        AlertsSrv.addHidden($scope.alertdata);
+        return AlertsSrv.addHidden($scope.alertdata);
       };
 
       $scope.toggleMore = function () {
