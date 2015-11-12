@@ -50,5 +50,5 @@ gulp.task('app:watch', function() {
     bundleShare(b, "alerts.js");
   });
 
-  return bundleShare(b, "date_formatter.js");
+  return bundleShare(b, "alerts.js");
 })
