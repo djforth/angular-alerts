@@ -1,7 +1,7 @@
 'use strict'
 
 const _      = require('lodash')
-const Cookie = require('cookie_mgmt')
+const Cookie = require('@djforth/cookie_mgmt')
 
 module.exports = function(){
   let cookie = new Cookie();

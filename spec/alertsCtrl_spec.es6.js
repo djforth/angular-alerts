@@ -1,9 +1,9 @@
 require ('angular')
 require ('angular-mocks')
-require ('../lib/alerts.es6.js')
+require ('../src/alerts')
 const _ = require('lodash')
-const ctrlTests   = require('controller-tests')
-const mockdata = require("./factory/alerts_data.js")
+const ctrlTests = require('@djforth/angular-jasmine-helpers').controllerTests
+const mockdata  = require("./factory/alerts_data.js")
 
 describe('AlertsCtrl', function() {
   let ctrl,

@@ -1,11 +1,11 @@
 require ('angular');
 require ('angular-mocks');
 
-require ('../lib/alerts.es6.js');
+require ('../src/alerts');
 
 const _ = require('lodash');
-const mockdata = require("./factory/alerts_data.js");
-const directives = require('directives-tests');
+const mockdata   = require("./factory/alerts_data.js");
+const directives = require('@djforth/angular-jasmine-helpers').directiveTests;
 
 describe('Alert Directive', function() {
   let element,

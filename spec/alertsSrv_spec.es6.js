@@ -1,8 +1,7 @@
 
 require ('angular')
 require ('angular-mocks')
-
-require ('../lib/alerts.es6.js')
+require ('../src/alerts')
 let _ = require('lodash')
 
 let mockdata = require("./factory/alerts_data.js")

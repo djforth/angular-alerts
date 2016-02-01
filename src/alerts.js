@@ -3,11 +3,11 @@
 require('angular');
 require('angular-resource');
 
-let alertsFcty      = require('./alertsFcty.es6.js')
-let alertsSrv       = require('./alertsSrv.es6.js')
-let alertsCtrl      = require('./alertsCtrl.es6.js')
-let alertDir        = require('./alertDir.es6.js')
-let alertsHolderDir = require('./alertsHolderDir.es6.js')
+let alertsFcty      = require('./alertsFcty')
+let alertsSrv       = require('./alertsSrv')
+let alertsCtrl      = require('./alertsCtrl')
+let alertDir        = require('./alertDir')
+let alertsHolderDir = require('./alertsHolderDir')
 
 var alerts =  angular.module('$alerts', ['ngResource'])
   .constant('ALERT_URL','/api/alerts.json')

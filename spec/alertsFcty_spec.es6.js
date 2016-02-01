@@ -1,7 +1,7 @@
 require ('angular')
 require ('angular-mocks')
-require ('../lib/alerts.es6.js')
-var fctyTests   = require('factory-tests')
+require ('../src/alerts')
+var fctyTests   = require('@djforth/angular-jasmine-helpers').factoryTests;
 
 var mockdata    = require("./factory/alerts_data.js")
 

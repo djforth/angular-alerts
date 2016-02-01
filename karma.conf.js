@@ -1,7 +1,5 @@
 // Karma configuration
-// Generated on Sun Sep 21 2014 14:40:52 GMT+0100 (BST)
-
-var vendor = require("./config/externals.js")
+// Generated on Mon Jul 06 2015 11:16:45 GMT+0100 (BST)
 
 module.exports = function(config) {
   config.set({
@@ -17,9 +15,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-        '../lib/vendors.js',
-        '../spec/lib/lib.js',
-        '../spec/*.es6.js'
+        './spec/*_spec.es6.js'
     ],
 
 
@@ -31,32 +27,21 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-        '../spec/*.es6.js': [ 'browserify' ]
+        './spec/*_spec.es6.js': [ 'browserify' ]
     },
 
     browserify: {
-      debug: true,
-      transform: ['babelify'],
-      extensions: [ ".es6.js"],
-      configure: function(bundle) {
-        bundle.on('prebundle', function() {
-          vendor.externals.forEach(function(ext){
-
-            bundle.external(ext.expose)
-          })
-
-          vendor.externalsTest.forEach(function(ext){
-            bundle.external(ext.expose)
-          })
-        });
-      }
+      debug: false,
+      transform: ['babelify', ['rewireify', { ignore: 'moof' }]],
+      extensions: [ "es6.js"],
+      bundleDelay: 1000
     },
 
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['dots','progress'],
+    reporters: ['story', 'progress'],
 
 
     // web server port
@@ -78,11 +63,16 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS', 'Chrome', 'Firefox', 'Safari', 'Opera', 'IE9 - Win7', 'IE10 - Win7', 'IE11 - Win7'],
+    browsers: ['Chrome', 'PhantomJS', 'Opera', 'Safari', 'Firefox'],
 
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false
-  });
-};
+    singleRun: false,
+
+    coverageReporter: {
+      type : 'html',
+      dir : 'coverage/'
+    }
+  })
+}
