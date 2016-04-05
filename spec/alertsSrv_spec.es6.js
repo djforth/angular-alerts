@@ -3,6 +3,7 @@ require ('angular')
 require ('angular-mocks')
 require ('../src/alerts')
 let _ = require('lodash')
+_.includes = require('lodash/includes');
 
 let mockdata = require("./factory/alerts_data.js")
 

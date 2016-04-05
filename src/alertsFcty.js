@@ -1,5 +1,5 @@
 'use strict'
-let _ = require('lodash')
+let _ = require('lodash/core');
 
 module.exports = function($http, $q, ALERT_URL){
   let alertData = []

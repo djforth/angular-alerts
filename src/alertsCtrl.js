@@ -1,4 +1,4 @@
-let _ = require('lodash')
+let _ = require('lodash/core');
 
 module.exports = ["$scope", "AlertsFcty", "AlertsSrv", function($scope, AlertsFcty, AlertsSrv){
 

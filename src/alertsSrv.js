@@ -1,6 +1,7 @@
 'use strict'
 
-const _      = require('lodash')
+const _      = require('lodash/core');
+_.includes = require('lodash/includes');
 const Cookie = require('@djforth/cookie_mgmt')
 
 module.exports = function(){
@@ -26,7 +27,7 @@ module.exports = function(){
     },
 
     hideAll:function(alerts){
-      hidden = _.pluck(alerts, "id")
+      hidden = _.map(alerts, "id")
       this.cookie.createCookie("alerts", hidden, 1)
     },
 
@@ -37,7 +38,7 @@ module.exports = function(){
     },
 
     isHidden:function(a){
-      return _.contains(hidden, a.id);
+      return _.includes(hidden, a.id);
     },
 
     loadHidden:function(){
