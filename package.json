@@ -1,6 +1,6 @@
 {
   "name": "@djforth/angular-alerts",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Angular Alerts",
   "main": "index.js",
   "scripts": {
@@ -31,10 +31,7 @@
   "assets": {
     "assets_in": "src",
     "assets_out": "lib",
-    "javascripts": {
-
-
-    },
+    "javascripts": {},
     "karma": {
       "externals": [
         "./node_modules/babel-polyfill/dist/polyfill.js"
@@ -43,7 +40,6 @@
       "specs": [
         "/*_spec.es6.js"
       ]
-
     }
   },
   "devDependencies": {
